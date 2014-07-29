@@ -1,0 +1,128 @@
+/* @group ----- General HTML Elements ----- */
+
+section .container, footer .container {
+    @include prefix(1);
+    @include suffix(1);
+}
+
+/* @end */
+
+/* @group ----- Global classes ----- */
+
+.alignleft, .alignright {
+    margin: 0;
+    float: none;
+    display: block;
+}
+
+/* @end */
+
+/* @group ----- Primary Navigation ----- */
+
+nav.primary {
+    text-align: center;
+    cursor: pointer;
+    background-color: rgba(0,0,0,.8);
+    
+    .center {
+        display: block;
+        margin: 0;
+    }
+    
+    a {
+        border-right: 0;
+        border-top: 1px solid rgba(255, 255, 255, .15);
+        width: 100%;
+        padding: rhythm(.5) 0;
+    }
+
+    ul { 
+        display: none;
+        padding: 0 0 150%;
+        text-align: center;
+        width: 100%;
+        font-size: $base-font-size;
+        line-height: $base-line-height;
+    }
+    
+    li { float: none; }
+    
+    li:first-of-type { border-left: 0; }
+    
+    li:last-of-type { border-bottom: 1px solid rgba(255, 255, 255, .15); }
+    
+    &.mobile-display ul {
+        display: block;
+    }
+}
+
+nav.primary:before {
+    content: "MENU";
+    color: #9abbc7;
+    font-size: .75 * $base-font-size;
+}
+
+.us-toggle, .au-toggle {
+    top: 1px;
+    right: 10px;
+}
+
+/* @end */
+
+/* @group ----- Intro ----- */
+
+#intro { padding-bottom: 0; }
+
+#intro h1 { font-size: 3 * $base-font-size; }
+
+#intro img { @include leader(); }
+
+#intro .authors {
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+}
+
+#countdown { display: none; }
+
+.preorder {
+    padding-bottom: rhythm(4);
+}
+
+/* @end */
+
+/* @group ----- Book ----- */
+
+#book img { @include trailer(); }
+
+#book blockquote img {
+    margin: rhythm() auto;
+    display: block;
+    position: relative;
+}
+
+#book blockquote p { padding-left: 0; }
+
+#countdown { 
+    float: none;
+    margin-left: 0;
+}
+
+.custom-slider {
+    height: rhythm(12);
+}
+
+/* @end */
+
+/* @group ----- Authors ----- */
+
+#authors {
+    .amie, .meg {
+        width: 100%;
+        margin: 0;
+        float: none;
+        display: block;
+        @include trailer();
+    }
+}
+
+/* @end */

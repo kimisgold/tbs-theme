@@ -1,0 +1,17 @@
+@import "base";
+
+@media screen {
+    @import "screen";
+}
+
+@media screen and (max-width: 1100px) {
+    @import "screen_1100";
+}
+
+@media screen and (max-width: 768px) {
+    @import "screen_768"; 
+}
+
+@media screen and (max-width: 600px) {
+    @import "screen_480";
+}

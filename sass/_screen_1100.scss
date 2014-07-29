@@ -1,0 +1,31 @@
+/* @group ----- Intro ----- */
+
+#order {
+    ul:first-of-type {
+        height: rhythm(7.5);
+        li {
+            left: 0 !important; 
+        }
+        
+        li:nth-child(2) {
+            top: 60px;
+        }
+
+        li:nth-child(3) {
+            top: 130px;
+        }
+        
+        li:nth-child(4) { top: 175px; }
+
+    }
+}
+
+/* @end */
+
+/* @group ----- Authors ----- */
+
+#authors .main, .author-meta { width: 100%; }
+
+.author-meta { text-align: center; }
+
+/* @end */

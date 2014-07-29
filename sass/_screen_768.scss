@@ -1,0 +1,58 @@
+/* @group ----- Primary Navigation ----- */
+
+.us-toggle, .au-toggle {
+    top: 12px;
+    right: 20px;
+}
+
+/* @end */
+
+/* @group ----- Intro ---- */
+
+#intro { text-align: center; }
+
+#intro img { width: 80%; }
+
+#intro h1 {
+    width: 50%;
+    font-size: 4 * $base-font-size;
+    line-height: 2 * $base-line-height;
+}
+
+.preorder { 
+    width: 100%; 
+    text-align: center;
+    
+    #order ul:first-of-type {
+        li { 
+            width: 100%;
+        }
+
+        a { 
+            margin-right: auto;
+            margin-left: auto;
+        }
+    }
+}
+
+/* @end */
+
+/* @group ----- Book ----- */
+
+#book blockquote {
+    img { margin-bottom: rhythm(3); }
+}
+
+/* @end */
+
+/* @group ----- News ----- */
+
+#news .amie, #news .meg {
+    width: 100%;
+    margin: 0;
+    float: none;
+    display: block;
+    @include trailer(2);
+}
+
+/* @end */
