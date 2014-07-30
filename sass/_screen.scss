@@ -30,6 +30,11 @@ body {
     margin: 0;
     padding: 0;
     position: relative;
+    
+    &.tsw {
+        background-color: #3e1926;
+        color: #fff;
+    }
 }
 
 a { text-decoration: none;}
@@ -132,6 +137,11 @@ nav.primary {
     }
 }
 
+.tsw nav.primary a:link { color: #b1b1b1; }
+
+.tsw nav.primary a:active,
+.tsw nav.primary a:hover { color: #fff; }
+
 .center {
     display: table;
     margin: 0 auto;
@@ -189,6 +199,16 @@ nav.primary {
     }
 }
 
+.tsw #intro {
+    background: url('../images/tsw_intro_bg.jpg') no-repeat center;
+    background-size: cover;
+}
+
+.tsw #intro:after {
+    background: url('../images/tsw_book_before.png');
+    background-size: cover;
+}
+
 .date { display: block; }
 
 .preorder {
@@ -243,6 +263,15 @@ nav.primary {
             @include box-shadow(0 0 20px #008080);
         }
     }
+}
+
+.tsw #promo .button {
+    background-color: #721B3A;
+
+    &:hover {
+        background-color: #b90000;
+        @include box-shadow(0 0 20px #DB3D70);
+    }    
 }
 
 #order {
@@ -328,9 +357,9 @@ nav.primary {
 
 /* @group ----- Book ----- */
 
-#book {
-    h1, p:first-of-type { color: #0361aa; }
-    
+#tsw,
+#tbs,
+#book {    
     p:first-of-type {
         font-style: italic;
     }
@@ -358,6 +387,22 @@ nav.primary {
             position: absolute;
         }
     }
+}
+
+#tbs,
+#book {
+    h1, p:first-of-type { color: #0361aa; }
+}
+
+#tsw h1, #tsw p:first-of-type { color: #ff7c00; }
+
+body.tsw #tbs,
+#tsw {
+    display: none;
+}
+
+body.tsw #tsw {
+    display: block;
 }
 
 #countdown {
@@ -451,6 +496,11 @@ div.timer { opacity: 0.0 !important; }
     .amie { @include span-columns(6 alpha); }
     
     .meg { @include span-columns(6 omega); }
+}
+
+.tsw #authors:before {
+    background: url('../images/tsw_authors_before.png') no-repeat;
+    background-size: cover;
 }
 
 .author-meta { 
