@@ -1,7 +1,3 @@
-<?php 
-$currentBook = getCurrentBook();
-?>
-
 <!doctype html>
 <html lang="en">
 
@@ -30,7 +26,7 @@ $currentBook = getCurrentBook();
     
 </head>
 
-<body class="<?php echo $currentBook; ?>">
+<body class="tsw">
 
 <nav class="primary">
 <?php wp_nav_menu( array( 
