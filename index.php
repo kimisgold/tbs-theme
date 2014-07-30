@@ -7,10 +7,8 @@
         <div class="center">
           
           <?php if (!is_page('australia')): ?>
-              <img src="<?php echo bloginfo('template_directory'); ?>/images/cover.png" alt="Cover for THESE BROKEN STARS by Amie Kaufman and Meagan Spooner" />
               <?php include('us.php'); ?>
           <?php else: ?>
-              <img src="<?php echo bloginfo('template_directory'); ?>/images/cover-au.png" alt="Cover for THESE BROKEN STARS by Amie Kaufman and Meagan Spooner" />
               <?php include('au.php'); ?>
           <?php endif; ?>
 

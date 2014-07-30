@@ -142,6 +142,15 @@ nav.primary {
 .tsw nav.primary a:active,
 .tsw nav.primary a:hover { color: #fff; }
 
+a[href="#tsw"],
+.tsw a[href="#tbs"] {
+    display: none;
+}
+
+.tsw a[href="#tsw"] {
+    display: inline-block;
+}
+
 .center {
     display: table;
     margin: 0 auto;
