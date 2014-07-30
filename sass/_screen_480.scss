@@ -92,6 +92,24 @@ nav.primary:before {
 
 /* @group ----- Book ----- */
 
+.book-toggle img {
+    height: rhythm(2);
+}
+
+.book-toggle a:after {
+    border-top: rhythm(.25) solid transparent;
+    border-bottom: rhythm(.25) solid transparent;
+    top: rhythm(.75);
+}
+
+.book-toggle a.tbs-only:after {
+    border-left: rhythm(.5) solid rgba(255,255,255,.6);
+}
+
+.book-toggle a.tsw-only:after {
+    border-right: rhythm(.5) solid rgba(255,255,255,.6);
+}
+
 #book img { @include trailer(); }
 
 #book blockquote img {

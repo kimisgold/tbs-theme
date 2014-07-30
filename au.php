@@ -1,67 +1,67 @@
-<?php $currentBook = getCurrentBook();?>
-
-<?php if ($currentBook == 'tbs'): ?>
-<img src="<?php echo bloginfo('template_directory'); ?>/images/cover-au.png" alt="Cover for THESE BROKEN STARS by Amie Kaufman and Meagan Spooner" />
-<div class="preorder au">
-    <p><span class="date">NOW AVAILABLE</span></p>
+<div class="tbs-only">
+    <img src="<?php echo bloginfo('template_directory'); ?>/images/cover-au.png" alt="Cover for THESE BROKEN STARS by Amie Kaufman and Meagan Spooner" />
+    <div class="preorder au">
+        <p><span class="date">NOW AVAILABLE</span></p>
+        
+        <p>Order from the following booksellers:</p>              
     
-    <p>Order from the following booksellers:</p>              
-
-    <div id="order">
-        <?php
+        <div class="order">
+            <?php
+            
+            $order = get_posts(array('post_type' => 'other', 'name' => 'order-au'));
+            
+            if( $order ) {
+                echo apply_filters('the_content', $order[0]->post_content);
+            }
+            
+            ?>
+        </div>
         
-        $order = get_posts(array('post_type' => 'other', 'name' => 'order-au'));
-        
-        if( $order ) {
-            echo apply_filters('the_content', $order[0]->post_content);
-        }
-        
-        ?>
-    </div>
+        <div class="promo">
+            <?php
+            
+            $promo = get_posts(array('post_type' => 'other', 'name' => 'promo'));
+            
+            if( $promo ) {
+                echo apply_filters('the_content', $promo[0]->post_content);
+            }
+            
+            ?>
+        </div>
     
-    <div id="promo">
-        <?php
-        
-        $promo = get_posts(array('post_type' => 'other', 'name' => 'promo'));
-        
-        if( $promo ) {
-            echo apply_filters('the_content', $promo[0]->post_content);
-        }
-        
-        ?>
     </div>
-
 </div>
-<?php else if ($currentBook == 'tsw'): ?>
-<img src="<?php echo bloginfo('template_directory'); ?>/images/tsw-cover-au.png" alt="Cover for THIS SHATTERED WORLD by Amie Kaufman and Meagan Spooner" />
-<div class="preorder au">
-    <p><span class="date">NOW AVAILABLE</span></p>
-    
-    <p>Order from the following booksellers:</p>              
 
-    <div id="order">
-        <?php
+<div class="tsw-only">
+    <img src="<?php echo bloginfo('template_directory'); ?>/images/tsw-cover-au.png" alt="Cover for THIS SHATTERED WORLD by Amie Kaufman and Meagan Spooner" />
+    <div class="preorder au">
+        <p><span class="date">NOW AVAILABLE</span></p>
         
-        $order = get_posts(array('post_type' => 'other', 'name' => 'order-au'));
-        
-        if( $order ) {
-            echo apply_filters('the_content', $order[0]->post_content);
-        }
-        
-        ?>
-    </div>
+        <p>Order from the following booksellers:</p>              
     
-    <div id="promo">
-        <?php
+        <div class="order">
+            <?php
+            
+            $order = get_posts(array('post_type' => 'other', 'name' => 'order-au'));
+            
+            if( $order ) {
+                echo apply_filters('the_content', $order[0]->post_content);
+            }
+            
+            ?>
+        </div>
         
-        $promo = get_posts(array('post_type' => 'other', 'name' => 'promo'));
-        
-        if( $promo ) {
-            echo apply_filters('the_content', $promo[0]->post_content);
-        }
-        
-        ?>
+        <div class="promo">
+            <?php
+            
+            $promo = get_posts(array('post_type' => 'other', 'name' => 'promo'));
+            
+            if( $promo ) {
+                echo apply_filters('the_content', $promo[0]->post_content);
+            }
+            
+            ?>
+        </div>
+    
     </div>
-
 </div>
-<?php endif; ?>

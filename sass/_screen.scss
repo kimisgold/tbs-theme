@@ -30,9 +30,11 @@ body {
     margin: 0;
     padding: 0;
     position: relative;
+    @include transition(background-color .4s ease-in-out);
     
     &.tsw {
         background-color: #3e1926;
+        @include transition(background-color .4s ease-in-out);
         color: #fff;
     }
 }
@@ -172,6 +174,158 @@ a[href="#tsw"],
 
 /* @end */
 
+/* @group ----- Book Navigation ----- */
+
+.book-toggle img {
+    height: rhythm(4);
+    width: auto;
+}
+
+.book-toggle a {
+    position: absolute;
+    top: rhythm(6);
+    z-index: 100;
+    @include transition-duration(.2s);
+    @include transition-timing-function(ease-in);
+    
+    &:after {
+        content: "";
+        height: 0;
+        width: 0;
+        border-top: rhythm(.5) solid transparent;
+        border-bottom: rhythm(.5) solid transparent;
+        position: absolute;
+        color: #FFF;
+        top: rhythm(1.5);
+    }
+
+    &.tbs-only {
+        right: 5%;
+        opacity: .75;
+
+        &:after {
+            border-left: rhythm() solid rgba(255,255,255,.6);
+            right: 0;
+        }
+    }
+    
+    &.tsw-only {
+        left: 5%;
+        opacity: .75;
+        
+        &:after {
+            border-right: rhythm() solid rgba(255,255,255,.6);
+            left: 0;
+        }
+    }
+
+    &:hover {
+        opacity: 1;
+    }
+    
+}
+
+.tsw .book-toggle .tbs-only,
+.tbs .book-toggle .tsw-only {
+    display: none;
+}
+
+    /* @group ----- Toggle Intro ----- */
+    
+    .tbs .tsw-only,
+    .tsw .tbs-only {
+        opacity: 0;
+        position: absolute;
+    }
+    
+    .tbs .tbs-only,
+    .tsw .tsw-only {
+        @include transition(opacity .4s ease-in-out);
+        opacity: 1;
+    }
+    
+    .tsw #intro {
+        background: url('../images/tsw_intro_bg.jpg') no-repeat center;
+        background-size: cover;
+        @include transition(background .4s ease-in-out);
+    }
+    
+    .tsw #intro:after {
+        background: url('../images/tsw_book_before.png');
+        background-size: cover;
+        @include transition(background .4s ease-in-out);
+    }
+      
+      .tsw .promo .button {
+          background-color: #721B3A;
+      
+          &:hover {
+              background-color: #b90000;
+              @include box-shadow(0 0 20px #DB3D70);
+          }    
+      }
+
+    /* @end */
+    
+    /* @group ----- Toggle Book ----- */
+  
+    #tsw,
+    #tbs,
+    #book {    
+        p:first-of-type {
+            font-style: italic;
+        }
+        
+        blockquote {
+            margin: rhythm(2) 0;
+            color: #0361aa;
+            border-color: #A5BDE2;
+            overflow: hidden;
+            @include horizontal-borders(1px, 0, $base-font-size, solid);
+            
+            p:first-of-type { font-style: normal; } 
+            
+            p:last-of-type { display: block; }
+            
+            p {
+                position: relative;
+                padding-left: 120px;
+            }
+            
+            img {
+                top: rhythm(.25);
+                left: 0;
+                border: 1px solid #fff;
+                position: absolute;
+            }
+        }
+    }
+    
+    #tbs,
+    #book {
+        h1, p:first-of-type { color: #0361aa; }
+    }
+    
+    #tsw h1, #tsw p:first-of-type { color: #ff7c00; }
+    
+    body.tsw #tbs,
+    #tsw {
+        display: none;
+    }
+    
+    body.tsw #tsw {
+        display: block;
+    }
+    
+    .tsw #authors:before {
+        background: url('../images/tsw_authors_before.png') no-repeat;
+        background-size: cover;
+    }
+    
+    /* @end */
+
+/* @end */
+
 /* @group ----- Intro ----- */
 
 #intro {
@@ -180,9 +334,10 @@ a[href="#tsw"],
     width: 100%;
     padding: 49px 0 18%;
     position: relative;
+    @include transition(background .4s ease-in-out);
     
     img {
-        width: 50%;
+        width: 49%;
         height: auto;
         margin: 0;
         display: inline-block;
@@ -205,17 +360,8 @@ a[href="#tsw"],
         background-size: cover;
         position: absolute;
         bottom: 0;
+        @include transition(background .4s ease-in-out);
     }
-}
-
-.tsw #intro {
-    background: url('../images/tsw_intro_bg.jpg') no-repeat center;
-    background-size: cover;
-}
-
-.tsw #intro:after {
-    background: url('../images/tsw_book_before.png');
-    background-size: cover;
 }
 
 .date { display: block; }
@@ -245,7 +391,7 @@ a[href="#tsw"],
     }
 }
 
-#promo {
+.preorder .promo {
     position: relative;
     z-index: 999;
     margin: rhythm(2) 0 0;
@@ -274,16 +420,7 @@ a[href="#tsw"],
     }
 }
 
-.tsw #promo .button {
-    background-color: #721B3A;
-
-    &:hover {
-        background-color: #b90000;
-        @include box-shadow(0 0 20px #DB3D70);
-    }    
-}
-
-#order {
+.order {
     ul:first-of-type {
         padding-left: 0;
         list-style-type: none;
@@ -365,54 +502,6 @@ a[href="#tsw"],
 /* @end */
 
 /* @group ----- Book ----- */
-
-#tsw,
-#tbs,
-#book {    
-    p:first-of-type {
-        font-style: italic;
-    }
-    
-    blockquote {
-        margin: rhythm(2) 0;
-        color: #0361aa;
-        border-color: #A5BDE2;
-        overflow: hidden;
-        @include horizontal-borders(1px, 0, $base-font-size, solid);
-        
-        p:first-of-type { font-style: normal; } 
-        
-        p:last-of-type { display: block; }
-        
-        p {
-            position: relative;
-            padding-left: 120px;
-        }
-        
-        img {
-            top: rhythm(.25);
-            left: 0;
-            border: 1px solid #fff;
-            position: absolute;
-        }
-    }
-}
-
-#tbs,
-#book {
-    h1, p:first-of-type { color: #0361aa; }
-}
-
-#tsw h1, #tsw p:first-of-type { color: #ff7c00; }
-
-body.tsw #tbs,
-#tsw {
-    display: none;
-}
-
-body.tsw #tsw {
-    display: block;
-}
 
 #countdown {
     float: right;
@@ -505,11 +594,6 @@ div.timer { opacity: 0.0 !important; }
     .amie { @include span-columns(6 alpha); }
     
     .meg { @include span-columns(6 omega); }
-}
-
-.tsw #authors:before {
-    background: url('../images/tsw_authors_before.png') no-repeat;
-    background-size: cover;
 }
 
 .author-meta { 

@@ -1,5 +1,10 @@
 <?php get_header(); ?>
 
+<div class="book-toggle">
+    <a href="#" class="tsw-only"><img src="<?php echo bloginfo('template_directory'); ?>/images/cover.png" alt="Cover for THESE BROKEN STARS by Amie Kaufman and Meagan Spooner" /></a>
+    <a href="#" class="tbs-only"><img src="<?php echo bloginfo('template_directory'); ?>/images/tsw-cover.png" alt="Cover for THIS SHATTEREDWORLD by Amie Kaufman and Meagan Spooner" /></a>
+</div>
+
 <section id="intro">
 
     <div class="container">
